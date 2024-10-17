@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postmortem Report Form</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Postmortem Report Form</h1>
+        <div class="progress-bar">
+            <div class="progress-bar-fill" id="progressBarFill"></div>
+        </div>
+        <form id="postmortemForm">
+            <!-- Step 1: Introduction -->
+            <div class="form-step active">
+                <section>
+                    <h2>Introduction</h2>
+                    <label for="projectName">Project Name:</label>
+                    <input type="text" id="projectName" name="projectName" required>
+                    
+                    <label for="reportDate">Date of Report:</label>
+                    <input type="date" id="reportDate" name="reportDate" required>
+                    
+                    <label for="projectDuration">Project Duration:</label>
+                    <input type="text" id="projectDuration" name="projectDuration" required>
+                    
+                    <label for="teamMembers">Team Members:</label>
+                    <input type="text" id="teamMembers" name="teamMembers" required>
+                    
+                    <label for="overview">Brief Overview of the Project:</label>
+                    <textarea id="overview" name="overview" rows="4" required></textarea>
+                </section>
+            </div>
+
+            <!-- Step 2: Project Goals and Objectives -->
+            <div class="form-step">
+                <section>
+                    <h2>Project Goals and Objectives</h2>
+                    <label for="goals">Initial Project Goals:</label>
+                    <textarea id="goals" name="goals" rows="4" required></textarea>
+                    
+                    <label for="goalAchievement">How well were the goals met?</label>
+                    <textarea id="goalAchievement" name="goalAchievement" rows="4" required></textarea>
+                </section>
+            </div>
+
+            <!-- Step 3: Successes -->
+            <div class="form-step">
+                <section>
+                    <h2>Successes</h2>
+                    <label for="successes">What went well?</label>
+                    <textarea id="successes" name="successes" rows="4" required></textarea>
+                    
+                    <label for="achievements">Key achievements and milestones:</label>
+                    <textarea id="achievements" name="achievements" rows="4" required></textarea>
+                </section>
+            </div>
+
+            <!-- Step 4: Challenges -->
+            <div class="form-step">
+                <section>
+                    <h2>Challenges</h2>
+                    <label for="challenges">What went wrong?</label>
+                    <textarea id="challenges" name="challenges" rows="4" required></textarea>
+                    
+                    <label for="solutions">How did you address these challenges?</label>
+                    <textarea id="solutions" name="solutions" rows="4" required></textarea>
+                </section>
+            </div>
+
+            <!-- Step 5: Lessons Learned -->
+            <div class="form-step">
+                <section>
+                    <h2>Lessons Learned</h2>
+                    <label for="takeaways">Key takeaways:</label>
+                    <textarea id="takeaways" name="takeaways" rows="4" required></textarea>
+                    
+                    <label for="futureApplications">How can these lessons be applied to future projects?</label>
+                    <textarea id="futureApplications" name="futureApplications" rows="4" required></textarea>
+                </section>
+            </div>
+
+            <!-- Step 6: Future Recommendations -->
+            <div class="form-step">
+                <section>
+                    <h2>Future Recommendations</h2>
+                    <label for="recommendations">Recommendations for similar projects:</label>
+                    <textarea id="recommendations" name="recommendations" rows="4" required></textarea>
+                    
+                    <label for="improvements">Potential improvements:</label>
+                    <textarea id="improvements" name="improvements" rows="4" required></textarea>
+                </section>
+            </div>
+
+            <!-- Step 7: Conclusion -->
+            <div class="form-step">
+                <section>
+                    <h2>Conclusion</h2>
+                    <label for="finalThoughts">Final thoughts:</label>
+                    <textarea id="finalThoughts" name="finalThoughts" rows="4" required></textarea>
+                    
+                    <label for="acknowledgments">Acknowledgments:</label>
+                    <textarea id="acknowledgments" name="acknowledgments" rows="4" required></textarea>
+                </section>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="form-navigation">
+                <button type="button" id="prevBtn" class="navigation-btn" onclick="prevStep()">Previous</button>
+                <button type="button" id="nextBtn" class="navigation-btn" onclick="nextStep()">Next</button>
+            </div>
+        </form>
+
+            <!-- Report Display Section -->
+    <div id="reportDisplay" class="report-display" style="display: none;">
+        <h2>Generated Postmortem Report</h2>
+        <div id="reportContent"></div>
+        <button id="downloadPdfBtn" onclick="downloadReportAsPDF()">Download as PDF</button>
+    </div>
+
+    </div>
+    <script src="main.js"></script>
+    <script src="mobile.js"></script>
+</body>
+</html>
+
